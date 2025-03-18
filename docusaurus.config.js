@@ -1,20 +1,21 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'SteamCore Documentation',
   tagline: 'SteamCore Documentation',
   url: 'https://steamcore.eeldev.com',
-  baseUrl: '/',
+  baseUrl: '/', 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/eeldev_icon.png',
-  organizationName: 'eelDev', // Usually your GitHub org/user name.
-  projectName: 'steamcore-docs', // Usually your repo name.
+  organizationName: 'eeldev-ue4', // Usually your GitHub org/user name.
+  projectName: 'doc.steamcore', // Usually your repo name.
+  deploymentBranch: 'deployment',
+  trailingSlash: false,
   plugins: [require.resolve("docusaurus-plugin-image-zoom")],
 
   presets: [
@@ -132,13 +133,12 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} eelDev AB`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
       },
       
     }
     ),
 };
 
-module.exports = config;
-
+export default config;
